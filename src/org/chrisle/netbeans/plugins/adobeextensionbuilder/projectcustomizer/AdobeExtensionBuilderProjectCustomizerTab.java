@@ -15,7 +15,7 @@ import org.openide.util.NbBundle;
  */
 public class AdobeExtensionBuilderProjectCustomizerTab implements ProjectCustomizer.CompositeCategoryProvider {
 
-    private String name = "Testermann";
+    private String name;
 
     private AdobeExtensionBuilderProjectCustomizerTab(String name) {
         this.name = name;
@@ -34,8 +34,9 @@ public class AdobeExtensionBuilderProjectCustomizerTab implements ProjectCustomi
         return jPanel1;
     }
 
-    @NbBundle.Messages({"LBL_Config=Configuration"})
-    @ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-chrisle-netbeans-plugins-adobeextensionbuilder", position = 10)
+    @NbBundle.Messages({"LBL_Config=Rastermann"})
+    @ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-netbeans-modules-web-clientproject", position = 100)
+//    @ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-chrisle-netbeans-plugins-adobeextensionbuilder", position = 10)
     public static AdobeExtensionBuilderProjectCustomizerTab createMyDemoConfigurationTab() {
         return new AdobeExtensionBuilderProjectCustomizerTab(Bundle.LBL_Config());
     }
