@@ -13,31 +13,28 @@ import org.openide.util.NbBundle;
  *
  * @author ChrisLE
  */
+@NbBundle.Messages({"LBL_Config=Adobe Extension Builder"})
+//@ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-netbeans-modules-maven", position = 900) - // This works
+@ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-netbeans-modules-web-clientproject", position = 900) // This works not
 public class AdobeExtensionBuilderProjectCustomizerTab implements ProjectCustomizer.CompositeCategoryProvider {
-
     private final String _name;
+    private final String _displayName;
 
-    private AdobeExtensionBuilderProjectCustomizerTab(String name) {
-        this._name = name;
+    public AdobeExtensionBuilderProjectCustomizerTab() {
+        this._displayName = Bundle.LBL_Config();
+        this._name = "AdobeExtensionManager";
     }
 
     @Override
     public Category createCategory(Lookup lkp) {
-        return ProjectCustomizer.Category.create(_name, _name, null);
+        return ProjectCustomizer.Category.create(_name, _displayName, null);
     }
 
     @Override
     public JComponent createComponent(Category category, Lookup lkp) {
         JPanel jPanel1 = new JPanel();
         jPanel1.setLayout(new BorderLayout());
-        jPanel1.add(new JLabel(_name), BorderLayout.CENTER);
+        jPanel1.add(new JLabel(_displayName), BorderLayout.CENTER);
         return jPanel1;
-    }
-
-    @NbBundle.Messages({"LBL_Config=Rastermann"})
-    @ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-netbeans-modules-web-clientproject", position = 10)
-//    @ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-chrisle-netbeans-plugins-adobeextensionbuilder", position = 10)
-    public static AdobeExtensionBuilderProjectCustomizerTab createMyDemoConfigurationTab() {
-        return new AdobeExtensionBuilderProjectCustomizerTab(Bundle.LBL_Config());
     }
 }

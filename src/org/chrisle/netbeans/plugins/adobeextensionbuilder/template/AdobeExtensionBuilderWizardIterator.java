@@ -38,7 +38,9 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 // TODO define position attribute
-@TemplateRegistration(folder = "Project/HTML5/Adobe", displayName = "#AdobeExtensionBuilder_displayName", description = "AdobeExtensionBuilderDescription.html", iconBase = "org/chrisle/netbeans/plugins/adobeextensionbuilder/template/AdobeExtensionBuilder.png", content = "AdobeExtensionBuilderProject.zip")
+// This works, it will added a new folder to Samples -> HTML5/JavaScript -> Adobe, but not for non samples.
+//@TemplateRegistration(folder = "Project/Samples/HTML5/Adobe", displayName = "#AdobeExtensionBuilder_displayName", description = "AdobeExtensionBuilderDescription.html", iconBase = "org/chrisle/netbeans/plugins/adobeextensionbuilder/template/AdobeExtensionBuilder.png", content = "AdobeExtensionBuilderProject.zip")
+@TemplateRegistration(folder = "Project/HTML5/JavaScript/Adobe", displayName = "#AdobeExtensionBuilder_displayName", description = "AdobeExtensionBuilderDescription.html", iconBase = "org/chrisle/netbeans/plugins/adobeextensionbuilder/template/AdobeExtensionBuilder.png", content = "AdobeExtensionBuilderProject.zip")
 @Messages("AdobeExtensionBuilder_displayName=Adobe Extension Builder")
 public class AdobeExtensionBuilderWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
 
