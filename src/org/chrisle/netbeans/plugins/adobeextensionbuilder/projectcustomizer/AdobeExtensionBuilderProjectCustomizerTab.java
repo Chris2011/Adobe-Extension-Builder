@@ -14,8 +14,7 @@ import org.openide.util.NbBundle;
  * @author ChrisLE
  */
 @NbBundle.Messages({"LBL_Config=Adobe Extension Builder"})
-//@ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-netbeans-modules-maven", position = 900) - // This works
-@ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org-netbeans-modules-web-clientproject", position = 900) // This works not
+@ProjectCustomizer.CompositeCategoryProvider.Registration(projectType = "org.netbeans.modules.web.clientproject", position = 900) // This works not
 public class AdobeExtensionBuilderProjectCustomizerTab implements ProjectCustomizer.CompositeCategoryProvider {
     private final String _name;
     private final String _displayName;
