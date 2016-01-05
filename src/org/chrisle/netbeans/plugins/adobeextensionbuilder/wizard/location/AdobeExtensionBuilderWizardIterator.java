@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.chrisle.netbeans.plugins.adobeextensionbuilder.template;
+package org.chrisle.netbeans.plugins.adobeextensionbuilder.wizard.location;
 
 import java.awt.Component;
 import java.io.ByteArrayInputStream;
@@ -21,6 +21,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
+import org.chrisle.netbeans.plugins.adobeextensionbuilder.wizard.targets.AdobeExtensionBuilderTargetsWizardPanel;
 import org.netbeans.api.project.ProjectManager;
 import org.netbeans.api.templates.TemplateRegistration;
 import org.netbeans.spi.project.ui.support.ProjectChooser;
@@ -37,7 +38,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-@TemplateRegistration(folder = "Project/ClientSide", position = 800, displayName = "#AdobeExtensionBuilder_displayName", description = "AdobeExtensionBuilderDescription.html", iconBase = "org/chrisle/netbeans/plugins/adobeextensionbuilder/template/AdobeExtensionBuilder.png", content = "AdobeExtensionBuilderProject.zip")
+@TemplateRegistration(folder = "Project/ClientSide", position = 800, displayName = "#AdobeExtensionBuilder_displayName", description = "../AdobeExtensionBuilderDescription.html", iconBase = "org/chrisle/netbeans/plugins/adobeextensionbuilder/resources/AdobeExtensionBuilder.png", content = "../../template/AdobeExtensionBuilderProject.zip")
 @Messages("AdobeExtensionBuilder_displayName=Adobe Extension Builder Application")
 public class AdobeExtensionBuilderWizardIterator implements WizardDescriptor./*Progress*/InstantiatingIterator {
 
@@ -54,12 +55,15 @@ public class AdobeExtensionBuilderWizardIterator implements WizardDescriptor./*P
 
     private WizardDescriptor.Panel[] createPanels() {
         return new WizardDescriptor.Panel[]{
-            new AdobeExtensionBuilderWizardPanel(),};
+            new AdobeExtensionBuilderWizardPanel(),
+            new AdobeExtensionBuilderTargetsWizardPanel()
+        };
     }
 
     private String[] createSteps() {
         return new String[]{
-            NbBundle.getMessage(AdobeExtensionBuilderWizardIterator.class, "LBL_CreateProjectStep")
+            NbBundle.getMessage(AdobeExtensionBuilderWizardIterator.class, "LBL_CreateProjectStep"),
+            NbBundle.getMessage(AdobeExtensionBuilderWizardIterator.class, "LBL_SetTargetApplicationsStep")
         };
     }
 

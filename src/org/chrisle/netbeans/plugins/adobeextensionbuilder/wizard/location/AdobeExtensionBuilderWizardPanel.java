@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.chrisle.netbeans.plugins.adobeextensionbuilder.template;
+package org.chrisle.netbeans.plugins.adobeextensionbuilder.wizard.location;
 
 import java.awt.Component;
 import java.util.HashSet;
@@ -19,7 +19,7 @@ import org.openide.util.NbBundle;
  * Panel just asking for basic info.
  */
 public class AdobeExtensionBuilderWizardPanel implements WizardDescriptor.Panel,
-        WizardDescriptor.ValidatingPanel, WizardDescriptor.FinishablePanel {
+        WizardDescriptor.ValidatingPanel {
 
     private WizardDescriptor wizardDescriptor;
     private AdobeExtensionBuilderPanelVisual component;
