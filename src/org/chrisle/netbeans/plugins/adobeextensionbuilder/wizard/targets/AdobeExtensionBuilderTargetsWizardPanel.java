@@ -22,14 +22,14 @@ public class AdobeExtensionBuilderTargetsWizardPanel implements WizardDescriptor
         WizardDescriptor.ValidatingPanel, WizardDescriptor.FinishablePanel {
 
     private WizardDescriptor wizardDescriptor;
-    private AdobeExtensionBuilderTargetsPanel component;
+    private AdobeExtensionBuilderTargetsPanelVisual component;
 
     public AdobeExtensionBuilderTargetsWizardPanel() {
     }
 
     public Component getComponent() {
         if (component == null) {
-            component = new AdobeExtensionBuilderTargetsPanel(this);
+            component = new AdobeExtensionBuilderTargetsPanelVisual(this);
             component.setName(NbBundle.getMessage(AdobeExtensionBuilderTargetsWizardPanel.class, "LBL_SetTargetApplicationsStep"));
         }
         return component;
