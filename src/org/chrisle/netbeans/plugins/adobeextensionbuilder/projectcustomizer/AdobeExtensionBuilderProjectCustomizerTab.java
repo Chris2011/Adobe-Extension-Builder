@@ -29,11 +29,11 @@ public class AdobeExtensionBuilderProjectCustomizerTab implements ProjectCustomi
         return ProjectCustomizer.Category.create(_name, _displayName, null);
     }
 
-    @Override
-    public JComponent createComponent(Category category, Lookup lkp) {
-        JPanel jPanel1 = new JPanel();
-        jPanel1.setLayout(new BorderLayout());
-        jPanel1.add(new JLabel(_displayName), BorderLayout.CENTER);
-        return jPanel1;
-    }
+@Override
+public JComponent createComponent(Category category, Lookup lkp) {
+    JPanel jPanel1 = new JPanel();
+    jPanel1.setLayout(new BorderLayout());
+    jPanel1.add(new JLabel(_displayName), BorderLayout.CENTER);
+    return jPanel1;
+}
 }
